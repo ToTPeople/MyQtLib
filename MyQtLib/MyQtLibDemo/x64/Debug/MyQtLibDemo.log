@@ -1,0 +1,9 @@
+﻿  Moc'ing MyQtLibDemo.h...
+  Rcc'ing MyQtLibDemo.qrc...
+  Uic'ing MyQtLibDemo.ui...
+  RCC: Warning: No resources in 'F:\Project\VS2017_projects\MyQtLib\MyQtLibDemo\MyQtLibDemo.qrc'.
+  main.cpp
+  MyQtLibDemo.cpp
+  moc_MyQtLibDemo.cpp
+  qrc_MyQtLibDemo.cpp
+  MyQtLibDemo.vcxproj -> F:\Project\VS2017_projects\MyQtLib\x64\Debug\MyQtLibDemo.exe

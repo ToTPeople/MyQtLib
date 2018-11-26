@@ -1,3 +1,0 @@
-MyQtLibDemo.h|"F:\Project\VS2017_projects\MyQtLib\MyQtLibDemo\MyQtLibDemo.h" -o ".\GeneratedFiles\Debug\moc_MyQtLibDemo.cpp" "-I.\GeneratedFiles" "-I." "-IF:\Qt\Qt5.9.6\5.9.6\msvc2017_64\include" "-I.\GeneratedFiles\Debug" "-IF:\Qt\Qt5.9.6\5.9.6\msvc2017_64\include\QtCore" "-IF:\Qt\Qt5.9.6\5.9.6\msvc2017_64\include\QtGui" "-IF:\Qt\Qt5.9.6\5.9.6\msvc2017_64\include\QtANGLE" "-IF:\Qt\Qt5.9.6\5.9.6\msvc2017_64\include\QtWidgets" -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-MyQtLibDemo.qrc|"F:\Project\VS2017_projects\MyQtLib\MyQtLibDemo\MyQtLibDemo.qrc" -o ".\GeneratedFiles\qrc_MyQtLibDemo.cpp" --name MyQtLibDemo
-MyQtLibDemo.ui|"F:\Project\VS2017_projects\MyQtLib\MyQtLibDemo\MyQtLibDemo.ui" -o ".\GeneratedFiles\ui_MyQtLibDemo.h"

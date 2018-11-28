@@ -1,0 +1,42 @@
+#pragma once
+
+typedef enum
+{
+    REGION_TYPE_NONE = 0x00,
+    REGION_TYPE_RECT,           // 矩形区域
+    REGION_TYPE_SQUARE,         // 方形区域
+    REGION_TYPE_MAX
+} RegionType_E;
+
+/// 绘制图形类型
+typedef enum
+{
+    DRAWING_TYPE_NONE = 0x00,
+    DRAWING_TYPE_RECT,          // 矩形
+    DRAWING_TYPE_SQUARE,        // 方形
+    DRAWING_TYPE_CIRCLE,        // 圆
+    DRAWING_TYPE_ELLIPE,        // 椭圆
+    DRAWING_TYPE_ARROW,         // 箭头
+    DRAWING_TYPE_PEN,           // 钢笔（随鼠标绘制）
+    DRAWING_TYPE_TEXT,          // 文本绘制
+    DRAWING_TYPE_MAX
+} DrawingType;
+
+/// 边角块
+typedef enum
+{
+    EDGE_CORNER_NONE = 0x00, // 无格式
+    EDGE_CORNER_TOP_LEFT = 0x01, // 左上角
+    EDGE_CORNER_TOP = 0x02, // 正上方
+    EDGE_CORNER_TOP_RIGHT = 0x04, // 右上角
+    EDGE_CORNER_LEFT = 0x08, // 左边
+    EDGE_CORNER_RIGHT = 0x10, // 右边
+    EDGE_CORNER_BOTTOM_LEFT = 0x20, // 左下角
+    EDGE_CORNER_BOTTOM = 0x40, // 下边
+    EDGE_CORNER_BOTTOM_RIGHT = 0x80, // 右下角
+    EDGE_CORNER_TOP_BAR = EDGE_CORNER_TOP_LEFT | EDGE_CORNER_TOP | EDGE_CORNER_TOP_RIGHT,           // 上边栏
+    EDGE_CORNER_BOTTOM_BAR = EDGE_CORNER_BOTTOM_LEFT | EDGE_CORNER_BOTTOM | EDGE_CORNER_BOTTOM_RIGHT,  // 下边栏
+    EDGE_CORNER_LEFT_BAR = EDGE_CORNER_TOP_LEFT | EDGE_CORNER_LEFT | EDGE_CORNER_BOTTOM_LEFT,        // 左边栏
+    EDGE_CORNER_RIGHT_BAR = EDGE_CORNER_TOP_RIGHT | EDGE_CORNER_RIGHT | EDGE_CORNER_BOTTOM_RIGHT,     // 右边栏
+    EDGE_CORNER_BOTTOMRIGHT_BLOCK = EDGE_CORNER_BOTTOM | EDGE_CORNER_RIGHT | EDGE_CORNER_BOTTOM_RIGHT,// 右下角块
+} EdgeCornerType_E;

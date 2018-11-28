@@ -80,7 +80,6 @@ QRect CalRegionByPos(const QPoint &st, const QPoint &en, RegionType_E eType)
         }
     }
 
-    qDebug() << "################### Cal: rc: " << rc;
     return rc;
 }
 

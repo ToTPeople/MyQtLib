@@ -134,7 +134,6 @@ void CShape::DrawShadowByShape(QPainter & painter, QPen pen, QRect & rc, ShapeTy
     QPen shadowPen(pen);
     shadowPen.setWidth(1);
     painter.setPen(shadowPen);
-    //painter.setPen(QPen(QColor(255, 0, 0), shadowWidth, Qt::DotLine));
 
     // …Ë÷√ª≠À¢—’…´
     painter.setBrush(Qt::NoBrush);

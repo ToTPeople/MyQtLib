@@ -28,6 +28,9 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="DrawingDemo">
+      <UniqueIdentifier>{86d0a6ea-fbb6-440e-8532-be222038afa2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,14 +39,29 @@
     <ClCompile Include="MyQtLibDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DrawingDemo\CCenterWidget.cpp">
+      <Filter>DrawingDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawingDemo\QtDrawDemo.cpp">
+      <Filter>DrawingDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MyQtLibDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="DrawingDemo\CCenterWidget.h">
+      <Filter>DrawingDemo</Filter>
+    </QtMoc>
+    <QtMoc Include="DrawingDemo\QtDrawDemo.h">
+      <Filter>DrawingDemo</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MyQtLibDemo.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DrawingDemo\QtDrawDemo.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

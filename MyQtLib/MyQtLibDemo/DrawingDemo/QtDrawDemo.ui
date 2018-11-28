@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>633</width>
     <height>400</height>
    </rect>
   </property>
@@ -19,18 +19,45 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>160</height>
+       <height>100</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>160</height>
+       <height>100</height>
       </size>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="label">
@@ -93,12 +120,31 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="btnText">
+           <property name="text">
+            <string>文本</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
       <item>
        <widget class="QWidget" name="widget_3" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_2">
            <property name="minimumSize">
@@ -131,7 +177,7 @@
             <item>
              <widget class="QLabel" name="label_3">
               <property name="text">
-               <string>线宽</string>
+               <string>线宽/字体大小</string>
               </property>
              </widget>
             </item>
@@ -151,7 +197,7 @@
             <item>
              <widget class="QLabel" name="label_8">
               <property name="text">
-               <string>线颜色</string>
+               <string>线色/文本色</string>
               </property>
              </widget>
             </item>
@@ -206,6 +252,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="btnMouse">
+           <property name="text">
+            <string>鼠标操作</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -213,7 +266,28 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="wgtCenter" native="true"/>
+    <widget class="QWidget" name="wgtCenter" native="true">
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>118</y>
+        <width>221</width>
+        <height>103</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>9</y>
+        <width>564</width>
+        <height>103</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </item>
    <item>
     <widget class="QWidget" name="wgtStatus" native="true">

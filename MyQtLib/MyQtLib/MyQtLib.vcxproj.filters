@@ -30,9 +30,6 @@
     <Filter Include="Demo">
       <UniqueIdentifier>{93b20497-17ab-4e5d-85ee-ac6bb5108b1b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="shape_drawing">
-      <UniqueIdentifier>{95029254-c0c8-4626-9999-e5ef25d0ff4c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="document_thumbnail">
       <UniqueIdentifier>{3dd95583-5914-4b96-bcb7-52910bec02ec}</UniqueIdentifier>
     </Filter>
@@ -41,13 +38,16 @@
       <Extensions>ui</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
+    <Filter Include="drawing">
+      <UniqueIdentifier>{95029254-c0c8-4626-9999-e5ef25d0ff4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\qss">
+      <UniqueIdentifier>{b8bb3038-5e75-4366-b242-fdd867813b6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CEffects.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\shape_drawing\CShape.cpp">
-      <Filter>shape_drawing</Filter>
     </ClCompile>
     <ClCompile Include="src\document_thumbnail\CThumbnailUtil.cpp">
       <Filter>document_thumbnail</Filter>
@@ -61,22 +61,28 @@
     <ClCompile Include="src\document_thumbnail\CDownloadNetData.cpp">
       <Filter>document_thumbnail</Filter>
     </ClCompile>
-    <ClCompile Include="src\shape_drawing\CDragStretch.cpp">
-      <Filter>shape_drawing</Filter>
+    <ClCompile Include="src\drawing\CDragStretch.cpp">
+      <Filter>drawing</Filter>
     </ClCompile>
-    <ClCompile Include="src\shape_drawing\CDrawingWidget.cpp">
-      <Filter>shape_drawing</Filter>
+    <ClCompile Include="src\drawing\CDrawingWidget.cpp">
+      <Filter>drawing</Filter>
     </ClCompile>
-    <ClCompile Include="src\shape_drawing\CommonFunc.cpp">
-      <Filter>shape_drawing</Filter>
+    <ClCompile Include="src\drawing\CommonFunc.cpp">
+      <Filter>drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drawing\CShape.cpp">
+      <Filter>drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drawing\CTextWidget.cpp">
+      <Filter>drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drawing\modQtDrawing.cpp">
+      <Filter>drawing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CEffects.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\shape_drawing\CShape.h">
-      <Filter>shape_drawing</Filter>
     </ClInclude>
     <ClInclude Include="src\document_thumbnail\CThumbnailUtil.h">
       <Filter>document_thumbnail</Filter>
@@ -87,14 +93,20 @@
     <ClInclude Include="src\document_thumbnail\PdfFile.h">
       <Filter>document_thumbnail</Filter>
     </ClInclude>
-    <ClInclude Include="src\shape_drawing\CDragStretch.h">
-      <Filter>shape_drawing</Filter>
+    <ClInclude Include="src\drawing\CDragStretch.h">
+      <Filter>drawing</Filter>
     </ClInclude>
-    <ClInclude Include="src\shape_drawing\CommonDefine.h">
-      <Filter>shape_drawing</Filter>
+    <ClInclude Include="src\drawing\CommonDefine.h">
+      <Filter>drawing</Filter>
     </ClInclude>
-    <ClInclude Include="src\shape_drawing\CommonFunc.h">
-      <Filter>shape_drawing</Filter>
+    <ClInclude Include="src\drawing\CommonFunc.h">
+      <Filter>drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\drawing\CShape.h">
+      <Filter>drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\drawing\modQtDrawing.h">
+      <Filter>drawing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,12 +118,28 @@
     <QtMoc Include="src\document_thumbnail\CDownloadNetData.h">
       <Filter>document_thumbnail</Filter>
     </QtMoc>
-    <QtMoc Include="src\shape_drawing\CDrawingWidget.h">
-      <Filter>shape_drawing</Filter>
+    <QtMoc Include="src\drawing\CDrawingWidget.h">
+      <Filter>drawing</Filter>
+    </QtMoc>
+    <QtMoc Include="src\drawing\CTextWidget.h">
+      <Filter>drawing</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="src\shape_drawing\Widget.ui">
+    <ResourceCompile Include="MyQtLib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="my_qt_lib.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\drawing\Resources\qss\default.css">
+      <Filter>Resource Files\qss</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\drawing\Widget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

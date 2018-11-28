@@ -2,7 +2,6 @@
 #include <QWidget>
 #include <QMouseEvent>
 
-
 class CDragStretchPrivate
 {
     friend CDragStretch;
@@ -28,8 +27,14 @@ public:
 
 public:
     QWidget*            m_pShowWidget;          // 显示控件
+
+    QWidget*            m_pTopLeftWidget;
+    QWidget*            m_pTopWidget;
+    QWidget*            m_pTopRightWidget;
+    QWidget*            m_pLeftWidget;
     QWidget*            m_pRightWidget;         // 右侧控件
     QWidget*            m_pBottomWidget;        // 底层控件
+    QWidget*            m_pBottomLeftWidget;
     QWidget*            m_pBottomRightWidget;   // 右下角控件
 
 public:
@@ -38,17 +43,24 @@ public:
     QPoint              offPoint;               // QWidget偏移量
     QSize               rightBottomSize;        // 鼠标点击拉伸时，右边 或 底层 或 右下角 宽度
     float               fRatio;                 // 等比例拉伸，比例值
+    EdgeCornerType_E    eEdgeCornerType;        // 边角启用 区域，启用才会显示
 };
 
 CDragStretchPrivate::CDragStretchPrivate(QWidget* pWgt)
     : m_pShowWidget(pWgt)
+    , m_pTopLeftWidget(NULL)
+    , m_pTopWidget(NULL)
+    , m_pTopRightWidget(NULL)
+    , m_pLeftWidget(NULL)
     , m_pRightWidget(NULL)
     , m_pBottomWidget(NULL)
+    , m_pBottomLeftWidget(NULL)
     , m_pBottomRightWidget(NULL)
     , eResizeType()
     , bMoveWnd(false)
     , offPoint(QPoint(0, 0))
     , fRatio(1.0)
+    , eEdgeCornerType(EDGE_CORNER_BOTTOMRIGHT_BLOCK)
 {}
 
 void CDragStretchPrivate::UpdateDragStretchStatus(QMouseEvent* event)
@@ -134,6 +146,45 @@ void CDragStretch::SetStretchRatio(float fRatio)
 void CDragStretch::UpdateCursorStatus()
 {
     m.SetCursorStyle();
+}
+
+void CDragStretch::SetUseBlock(EdgeCornerType_E eType)
+{
+    m.eEdgeCornerType = eType;
+}
+
+void CDragStretch::ShowUseBlock()
+{
+    int eType = m.eEdgeCornerType;
+    if ((EDGE_CORNER_RIGHT & eType) && NULL != m.m_pRightWidget)
+    {
+        m.m_pRightWidget->show();
+    }
+    if ((EDGE_CORNER_BOTTOM & eType) && NULL != m.m_pBottomWidget)
+    {
+        m.m_pBottomWidget->show();
+    }
+    if ((EDGE_CORNER_BOTTOM_RIGHT & eType) && NULL != m.m_pBottomRightWidget)
+    {
+        m.m_pBottomRightWidget->show();
+    }
+}
+
+void CDragStretch::HideUseBlock()
+{
+    int eType = m.eEdgeCornerType;
+    if ((EDGE_CORNER_RIGHT & eType) && NULL != m.m_pRightWidget)
+    {
+        m.m_pRightWidget->hide();
+    }
+    if ((EDGE_CORNER_BOTTOM & eType) && NULL != m.m_pBottomWidget)
+    {
+        m.m_pBottomWidget->hide();
+    }
+    if ((EDGE_CORNER_BOTTOM_RIGHT & eType) && NULL != m.m_pBottomRightWidget)
+    {
+        m.m_pBottomRightWidget->hide();
+    }
 }
 
 void CDragStretch::SetRightWidget(QWidget * pWgt)

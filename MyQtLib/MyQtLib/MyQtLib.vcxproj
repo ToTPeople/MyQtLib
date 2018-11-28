@@ -53,7 +53,7 @@
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;MYQTLIB_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MyQtLib;$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -68,7 +68,7 @@
     </Link>
     <QtMoc>
       <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;MYQTLIB_LIB;BUILD_STATIC</Define>
-      <IncludePath>$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath>$(SolutionDir)\MyQtLib;$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
     </QtMoc>
@@ -82,6 +82,10 @@
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
     </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -101,7 +105,7 @@
     </Link>
     <QtMoc>
       <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;MYQTLIB_LIB;BUILD_STATIC</Define>
-      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
     </QtMoc>
@@ -109,6 +113,10 @@
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
     </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CEffects.cpp" />
@@ -116,26 +124,45 @@
     <ClCompile Include="src\document_thumbnail\CThumbnailUtil.cpp" />
     <ClCompile Include="src\document_thumbnail\FileUtil.cpp" />
     <ClCompile Include="src\document_thumbnail\PdfFile.cpp" />
-    <ClCompile Include="src\shape_drawing\CDragStretch.cpp" />
-    <ClCompile Include="src\shape_drawing\CDrawingWidget.cpp" />
-    <ClCompile Include="src\shape_drawing\CommonFunc.cpp" />
-    <ClCompile Include="src\shape_drawing\CShape.cpp" />
+    <ClCompile Include="src\drawing\CDragStretch.cpp" />
+    <ClCompile Include="src\drawing\CDrawingWidget.cpp" />
+    <ClCompile Include="src\drawing\CommonFunc.cpp" />
+    <ClCompile Include="src\drawing\CShape.cpp" />
+    <ClCompile Include="src\drawing\CTextWidget.cpp" />
+    <ClCompile Include="src\drawing\modQtDrawing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CEffects.h" />
     <ClInclude Include="myqtlib_global.h" />
+    <ClInclude Include="src\drawing\CDragStretch.h" />
+    <ClInclude Include="src\drawing\CommonDefine.h" />
+    <ClInclude Include="src\drawing\CommonFunc.h" />
+    <ClInclude Include="src\drawing\CShape.h" />
+    <ClInclude Include="src\drawing\modQtDrawing.h" />
+    <QtMoc Include="src\drawing\CTextWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\MyQtLib;$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+    <QtMoc Include="src\drawing\CDrawingWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\MyQtLib;$(SolutionDir)\MyQtLib\src\document_thumbnail\third_lib\mupdf\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
     <QtMoc Include="src\document_thumbnail\CDownloadNetData.h" />
     <ClInclude Include="src\document_thumbnail\CThumbnailUtil.h" />
     <ClInclude Include="src\document_thumbnail\FileUtil.h" />
     <ClInclude Include="src\document_thumbnail\PdfFile.h" />
-    <ClInclude Include="src\shape_drawing\CDragStretch.h" />
-    <QtMoc Include="src\shape_drawing\CDrawingWidget.h" />
-    <ClInclude Include="src\shape_drawing\CommonDefine.h" />
-    <ClInclude Include="src\shape_drawing\CommonFunc.h" />
-    <ClInclude Include="src\shape_drawing\CShape.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="src\shape_drawing\Widget.ui" />
+    <ResourceCompile Include="MyQtLib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="my_qt_lib.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\drawing\Resources\qss\default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\drawing\Widget.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

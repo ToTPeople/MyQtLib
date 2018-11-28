@@ -4,9 +4,9 @@
 #include <QPainterPath>
 #include "ui_QtDrawDemo.h"
 
-class testWidget;
 class CDrawingWidget;
 class CCenterWidget;
+class CDrawingWidget;
 class QtDrawDemo : public QWidget
 {
     Q_OBJECT
@@ -29,15 +29,15 @@ public slots:
     void slotOnArrowClick();
     void slotOnFreeClick();
     void slotOnUseClick();
+    void slotOnMouseClick();
+    void slotOnTextClick();
+
+    void slotTextAreaChanged();
+    void slotTextSelectChanged();
 
 private:
     Ui::QtDrawDemoClass ui;
-
-    QPoint                  m_pointStart;
-    QPoint                  m_pointCur;
-    QPainterPath            m_painterPath;
-    QPixmap                 pix, tempPix;
-    QImage                  img;
     CCenterWidget*          m_pTestWgt;
-    bool isDrawing;
+    CDrawingWidget*         m_pPen;
+    CDrawingWidget*         m_pRect;
 };

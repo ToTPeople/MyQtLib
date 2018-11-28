@@ -1,4 +1,5 @@
 #pragma once
+#include "CommonDefine.h"
 
 class QMouseEvent;
 class QWidget;
@@ -23,6 +24,12 @@ public:
     void SetStretchRatio(float fRatio);
     /// 更新鼠标状态
     void UpdateCursorStatus();
+    /// 设置周边8格启用块
+    void SetUseBlock(EdgeCornerType_E eType);
+    /// 显示周边启用块
+    void ShowUseBlock();
+    /// 隐藏周边启用块
+    void HideUseBlock();
 
     /// 设置9宫格QWidget
     void SetRightWidget(QWidget* pWgt);

@@ -1,0 +1,12 @@
+
+/*****************************************************************************/
+QWidget#wgtTopLeft, QWidget#wgtTopRight, QWidget#wgtBottomLeft, QWidget#wgtBottomRight
+{
+    background-color : #ff0000;
+}
+
+QWidget#wgtTop, QWidget#wgtLeft, QWidget#wgtBottom, QWidget#wgtRight
+{
+    background-color : #00ff00;
+}
+

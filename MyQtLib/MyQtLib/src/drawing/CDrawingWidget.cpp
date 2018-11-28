@@ -78,6 +78,16 @@ CDrawingWidgetPrivate::CDrawingWidgetPrivate(CDrawingWidget* pWgt)
     , brushFill(Qt::NoBrush)
 {
     ui.setupUi(pWgt);
+    {
+        ui.wgtBottom->hide();
+        ui.wgtBottomLeft->hide();
+        ui.wgtBottomRight->hide();
+        ui.wgtLeft->hide();
+        ui.wgtRight->hide();
+        ui.wgtTop->hide();
+        ui.wgtTopLeft->hide();
+        ui.wgtTopRight->hide();
+    }
     hideRound();
 
     img = QImage(pWgt->size(), QImage::Format_RGBA8888);
@@ -99,25 +109,18 @@ CDrawingWidgetPrivate::CDrawingWidgetPrivate(CDrawingWidget* pWgt)
 
 void CDrawingWidgetPrivate::hideRound()
 {
-    ui.wgtLeftBar->hide();
-    ui.wgtRightBar->hide();
-    ui.wgtTopBar->hide();
-    ui.wgtBottomBar->hide();
-
-    ui.wgtTopRight->hide();
+    if (NULL != m_pDragStretch)
+    {
+        m_pDragStretch->HideUseBlock();
+    }
 }
 
 void CDrawingWidgetPrivate::showRound()
 {
-    if (WIDGET_STATE_EDITING != wgtState)
+    if (NULL != m_pDragStretch)
     {
-        hideRound();
-        return;
+        m_pDragStretch->ShowUseBlock();
     }
-    //ui.wgtLeftBar->show();
-    ui.wgtRightBar->show();
-    //ui.wgtTopBar->show();
-    ui.wgtBottomBar->show();
 }
 
 void CDrawingWidgetPrivate::updatePos(const QPoint& pos)
@@ -188,7 +191,10 @@ CDrawingWidget::CDrawingWidget(QWidget* parent /*= NULL*/)
     : QWidget(parent)
     , m(*new CDrawingWidgetPrivate(this))
 {
-    QFile file(":/qss/Resources/qss/default.css");
+#ifdef BUILD_STATIC
+    Q_INIT_RESOURCE(my_qt_lib); // æ≤Ã¨ø‚ ±“™…Ë÷√
+#endif
+    QFile file(":/drawing/src/drawing/Resources/qss/default.css");
     if (file.open(QFile::ReadOnly))
     {
         setStyleSheet(file.readAll());
